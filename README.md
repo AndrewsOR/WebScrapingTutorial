@@ -1,6 +1,8 @@
 
 # Web Scraping Tutorial for Tech Brown Bag 
 
+This is a markdown-rendered, non-executable version of the [ipython notebook](https://github.com/AndrewsOR/WebScrapingTutorial/blob/master/WebScrapingTutorial.ipynb) provided in this repo for your use.
+
 ## About web scraping
 
 We use web scraping tools to gather human-readable data from HTML or XML when it is not available in a format that is more easily machine-readable (e.g., a database or flat file).
