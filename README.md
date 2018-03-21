@@ -86,7 +86,7 @@ def getSoup(url, headers):
 
 Let's take a look at the main page.  We see a drop-down menu with entries for each state plus the District of Columbia (which we'll call "regions").
 
-![Screen%20Shot%202018-03-21%20at%2011.08.03%20AM.png](attachment:Screen%20Shot%202018-03-21%20at%2011.08.03%20AM.png)
+![Drop down menu](https://github.com/AndrewsOR/WebScrapingTutorial/blob/master/Screen%20Shot%201.png)
 
 Now let's find the HTML code for this drop-down menu.  
 
@@ -119,9 +119,11 @@ Now let's follow one of those links to a region page.  Note that we'll need to c
 
 http://www.barrons.com/report/top-financial-advisors/1000/alabama/2018
 
-![Screen%20Shot%202018-03-21%20at%2011.48.51%20AM.png](attachment:Screen%20Shot%202018-03-21%20at%2011.48.51%20AM.png)
+![State page](https://github.com/AndrewsOR/WebScrapingTutorial/blob/master/Screen%20Shot%202.png)
 
 Inspecting the page content, we see that the table looks like:
+
+```
     <table>
         <thead>
         <tr class="tableHeaderMeta">
@@ -177,6 +179,7 @@ Inspecting the page content, we see that the table looks like:
             <td class="marketDelta">100</td>
         </tr>
     ...etc..
+```
 
 Inspecting the table source, we note that:
 - The table headers are formatted poorly, with some headers spanning multiple columns and rows.  We will have to parse the table headers carefully.
@@ -277,8 +280,9 @@ if __name__ == "__main__":
 
     Writing 1200 results to: /Users/jandrews/workspace/barrons_financial_advisors.csv
 
-
 Our output file looks like:
+
+```
 Rank '18,Rank '17,Name,Firm,Location,Individuals (Up to $1mil),HighNet Worth ($1-10 mil),Ultra-HighNet Worth ($10 mil+),Foundations,Endowments,Institutional,TotalAsset ($mil),TypicalAccount ($mil),TypicalNet Worth ($mil),region
 1,2,Tony  Smith,UBS Financial Svcs,"Birmingham, AL",,Y,Y,,,,3209,50,100,alabama
 2,3,Jeff Roberts,Ameriprise Financial,"Birmingham, AL",Y,Y,Y,,,,671,0.5,1,alabama
@@ -295,6 +299,7 @@ Rank '18,Rank '17,Name,Firm,Location,Individuals (Up to $1mil),HighNet Worth ($1
 1,5,Jeff Leonard,Raymond James,"Anchorage, AK",Y,Y,Y,,,,565,2,2.8,alaska
 2,4,Kenneth Jones,Merrill Lynch Wealth Mgmt,"Anchorage, AK",Y,Y,Y,,,,322,2.5,8,alaska
 ... and so on...
+```
 
 ## Next Steps
 
